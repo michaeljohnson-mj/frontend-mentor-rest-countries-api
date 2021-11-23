@@ -1,0 +1,75 @@
+.countries-container {
+  padding: 50px;
+}
+
+.search-and-filter-holder {
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  width: 40%;
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px 0px var(--secondary-white-color);
+}
+
+.continent-filter {
+  width: 20%;
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px 0px var(--secondary-white-color);
+}
+
+.continent-filter > option {
+    background-color: var(--white-color);
+}
+
+/* COUNTRY CARD STYLINGS */
+.card {
+  height: 300px;
+  width: 200px;
+  border-radius: 5px;
+  background: var(--white-color);
+  box-shadow: 0px 0px 4px 0px var(--secondary-white-color);
+}
+
+.card-header,
+.card-content {
+  height: 50%;
+  width: 100%;
+}
+
+.card-header > img {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.flag-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-info-holder {
+  padding-top: 10px;
+}
+
+.country-data-value-holder {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.country-data-value-holder > span {
+  padding-left: 5px;
+  font-size: 0.875rem;
+}

@@ -1,9 +1,12 @@
 import "./App.css";
+import Countries from "./components/countries/Countries";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div>
-      <h1>Frontend Mentor - REST Countries API with color theme switcher</h1>
+      <Header />
+      <Countries />
     </div>
   );
 }

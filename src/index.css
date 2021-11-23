@@ -16,6 +16,8 @@
 
   /* Dark Mode Text & Light Mode Elements */
   --white-color: hsl(0, 0%, 100%);
+
+  --secondary-white-color: hsl(0, 0%, 93%);
 }
 
 *,
@@ -36,4 +38,9 @@ body {
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--very-light-gray-color);
+}
+
+#root {
+  min-height: 100%;
 }
