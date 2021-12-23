@@ -1,31 +1,29 @@
 import React from "react";
+import { numberWithCommas } from "../../../utils/NumberFormatter";
 import styles from "../Countries.module.css";
 
-function CountryCard() {
+function CountryCard(props) {
+  const country = props.country
   return (
     <div className={styles.card}>
       <div className={styles["card-header"]}>
-        <img
-          src="https://flagpedia.net/data/flags/w580/de.png"
-          alt=""
-          className={styles["flag-img"]}
-        />
+        <img src={country.flag} alt={`${country.name}'s Flag`} className={styles["flag-img"]} />
       </div>
 
       <div className={styles["card-content"]}>
-        <h3>Germany</h3>
+        <h3>{country.name}</h3>
         <div className={styles["country-info-holder"]}>
           <div className={styles["country-data-value-holder"]}>
             <h5>Population:</h5>
-            <span>9,999,999,999</span>
+            <span>{numberWithCommas(country.population)}</span>
           </div>
           <div className={styles["country-data-value-holder"]}>
             <h5>Region:</h5>
-            <span>Europe</span>
+            <span>{country.region}</span>
           </div>
           <div className={styles["country-data-value-holder"]}>
             <h5>Capital:</h5>
-            <span>Berlin</span>
+            <span>{country.capital ? country.capital : "---"}</span>
           </div>
         </div>
       </div>

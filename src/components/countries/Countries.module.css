@@ -27,14 +27,20 @@
 }
 
 .continent-filter > option {
-    background-color: var(--white-color);
+  background-color: var(--white-color);
+}
+
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
 }
 
 /* COUNTRY CARD STYLINGS */
 .card {
-  height: 300px;
-  width: 200px;
+  height: 350px;
   border-radius: 5px;
+  cursor: pointer;
   background: var(--white-color);
   box-shadow: 0px 0px 4px 0px var(--secondary-white-color);
 }
@@ -50,7 +56,10 @@
 }
 
 .card-content {
-  padding: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flag-img {
@@ -72,4 +81,9 @@
 .country-data-value-holder > span {
   padding-left: 5px;
   font-size: 0.875rem;
+}
+
+.no-record-text {
+  text-align: center;
+  font-size: 2rem;
 }

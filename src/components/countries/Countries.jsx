@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountries } from "../../redux/ducks/countries";
 import styles from "./Countries.module.css";
 import CountryCard from "./country-card/CountryCard";
 
-function Countries() {
+const Countries = () => {
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries.countries);
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
+
   return (
     <div className={styles["countries-container"]}>
       <div className={styles["search-and-filter-holder"]}>
@@ -19,9 +28,20 @@ function Countries() {
           <option value="asia">Oceania</option>
         </select>
       </div>
-      <CountryCard />
+
+      <div className={styles["grid-4-col"]}>
+        {countries &&
+          countries.length > 0 &&
+          countries.map((country) => {
+            return <CountryCard country={country} />;
+          })}
+
+        {countries && countries.length === 0 && (
+          <div className={styles["no-record-text"]}>No Countries Found</div>
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default Countries;
